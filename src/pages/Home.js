@@ -43,7 +43,8 @@ const HomeContainer = styled.div`
   }
 
   button {
-    background-color: #28a745;
+    background-color: ${(props) =>
+      props.theme.colors.primary}; /* Usando a cor primária do tema */
     color: white;
     padding: 0.5rem 1rem;
     border: none;
@@ -52,7 +53,9 @@ const HomeContainer = styled.div`
     transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: #218838;
+      background-color: ${(props) =>
+        props.theme.colors
+          .secondary}; /* Usando a cor secundária do tema para o hover */
     }
   }
 `;

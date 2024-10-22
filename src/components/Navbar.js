@@ -5,7 +5,9 @@ import { FiMenu, FiX } from "react-icons/fi";
 
 // Estilo para a navbar
 const NavbarContainer = styled.nav`
-  background-color: #007bff;
+  background-color: ${(props) => props.theme.colors.primary};
+  color: white;
+
   padding: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -30,6 +32,16 @@ const NavbarContainer = styled.nav`
 
   ul li {
     margin: 0;
+  }
+
+  a {
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+
+    &:hover {
+      color: ${(props) => props.theme.colors.accent}; // Cor verde no hover
+    }
   }
 
   ul li a {
