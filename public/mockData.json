@@ -4,301 +4,301 @@
             "id": 1,
             "name": "Ração Gato Adulto",
             "price": "R$ 49,90",
-            "image": "/images/cat-food-1.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 2,
             "name": "Ração Gato Filhote",
             "price": "R$ 59,90",
-            "image": "/images/cat-food-2.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 3,
             "name": "Brinquedo Mordedor Cachorro",
             "price": "R$ 19,90",
-            "image": "/images/dog-toy-1.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 4,
             "name": "Ração Cachorro Filhote",
             "price": "R$ 69,90",
-            "image": "/images/dog-food-2.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 5,
             "name": "Ração Coelho",
             "price": "R$ 39,90",
-            "image": "/images/rabbit-food.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 6,
             "name": "Ração Hamster",
             "price": "R$ 15,90",
-            "image": "/images/hamster-food.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 7,
             "name": "Cama para Gato",
             "price": "R$ 99,90",
-            "image": "/images/cat-bed.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 8,
             "name": "Cama para Cachorro",
             "price": "R$ 129,90",
-            "image": "/images/dog-bed.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 9,
             "name": "Aquário Pequeno",
             "price": "R$ 199,90",
-            "image": "/images/small-aquarium.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 10,
             "name": "Filtro para Aquário",
             "price": "R$ 89,90",
-            "image": "/images/aquarium-filter.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 11,
             "name": "Brinquedo Bola para Gato",
             "price": "R$ 9,90",
-            "image": "/images/cat-toy-ball.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 12,
             "name": "Arranhador para Gato",
             "price": "R$ 49,90",
-            "image": "/images/cat-scratcher.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 13,
             "name": "Coleira Cachorro Pequeno",
             "price": "R$ 29,90",
-            "image": "/images/small-dog-collar.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 14,
             "name": "Coleira Cachorro Grande",
             "price": "R$ 39,90",
-            "image": "/images/large-dog-collar.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 15,
             "name": "Ração Pássaro Pequeno",
             "price": "R$ 24,90",
-            "image": "/images/bird-food-small.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 16,
             "name": "Gaiola Pequena para Pássaro",
             "price": "R$ 79,90",
-            "image": "/images/small-bird-cage.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 17,
             "name": "Brinquedo Osso para Cachorro",
             "price": "R$ 14,90",
-            "image": "/images/dog-bone-toy.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 18,
             "name": "Shampoo para Gato",
             "price": "R$ 29,90",
-            "image": "/images/cat-shampoo.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 19,
             "name": "Shampoo para Cachorro",
             "price": "R$ 34,90",
-            "image": "/images/dog-shampoo.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 20,
             "name": "Ração Peixe Tropical",
             "price": "R$ 19,90",
-            "image": "/images/fish-food-tropical.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 21,
             "name": "Tapete Higiênico Cachorro",
             "price": "R$ 89,90",
-            "image": "/images/dog-hygiene-mat.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 22,
             "name": "Casinha para Cachorro Pequeno",
             "price": "R$ 199,90",
-            "image": "/images/small-dog-house.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 23,
             "name": "Ração Papagaio",
             "price": "R$ 49,90",
-            "image": "/images/parrot-food.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 24,
             "name": "Ração Hamster Premium",
             "price": "R$ 22,90",
-            "image": "/images/hamster-food-premium.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 25,
             "name": "Bebedouro Automático Gato",
             "price": "R$ 119,90",
-            "image": "/images/cat-water-fountain.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 26,
             "name": "Ração Peixe de Água Doce",
             "price": "R$ 18,90",
-            "image": "/images/fish-food-freshwater.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 27,
             "name": "Areia Higiênica para Gato",
             "price": "R$ 34,90",
-            "image": "/images/cat-litter.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 28,
             "name": "Coleira Antipulgas Cachorro",
             "price": "R$ 79,90",
-            "image": "/images/dog-flea-collar.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 29,
             "name": "Ração Ferret",
             "price": "R$ 59,90",
-            "image": "/images/ferret-food.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 30,
             "name": "Arranhador Grande para Gato",
             "price": "R$ 249,90",
-            "image": "/images/large-cat-scratcher.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 31,
             "name": "Brinquedo Mordedor Borracha",
             "price": "R$ 14,90",
-            "image": "/images/dog-chew-toy.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 32,
             "name": "Guia Retrátil Cachorro",
             "price": "R$ 59,90",
-            "image": "/images/dog-retractable-leash.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 33,
             "name": "Fonte de Água para Cachorro",
             "price": "R$ 129,90",
-            "image": "/images/dog-water-fountain.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 34,
             "name": "Brinquedo Interativo Gato",
             "price": "R$ 49,90",
-            "image": "/images/cat-interactive-toy.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 35,
             "name": "Ração Peixe de Água Salgada",
             "price": "R$ 21,90",
-            "image": "/images/fish-food-saltwater.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 36,
             "name": "Lâmpada UV para Répteis",
             "price": "R$ 79,90",
-            "image": "/images/reptile-uv-lamp.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 37,
             "name": "Cinto de Segurança para Cachorro",
             "price": "R$ 39,90",
-            "image": "/images/dog-seat-belt.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 38,
             "name": "Gaiola para Hamster",
             "price": "R$ 119,90",
-            "image": "/images/hamster-cage.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 39,
             "name": "Casa de Plástico para Gato",
             "price": "R$ 159,90",
-            "image": "/images/cat-house.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 40,
             "name": "Ração Gato Idoso",
             "price": "R$ 54,90",
-            "image": "/images/cat-food-senior.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 41,
             "name": "Brinquedo Bola com Corda",
             "price": "R$ 19,90",
-            "image": "/images/dog-toy-rope.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 42,
             "name": "Escova para Gato",
             "price": "R$ 29,90",
-            "image": "/images/cat-brush.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 43,
             "name": "Escova para Cachorro",
             "price": "R$ 34,90",
-            "image": "/images/dog-brush.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 44,
             "name": "Ração Peixe Betta",
             "price": "R$ 9,90",
-            "image": "/images/betta-fish-food.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 45,
             "name": "Filtro para Aquário Grande",
             "price": "R$ 149,90",
-            "image": "/images/large-aquarium-filter.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 46,
             "name": "Coleira Inteligente Gato",
             "price": "R$ 79,90",
-            "image": "/images/smart-cat-collar.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 47,
             "name": "Alimento Úmido para Gato",
             "price": "R$ 5,90",
-            "image": "/images/cat-wet-food.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 48,
             "name": "Bola para Cachorro",
             "price": "R$ 12,90",
-            "image": "/images/dog-ball-toy.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 49,
             "name": "Caixa de Transporte Gato",
             "price": "R$ 139,90",
-            "image": "/images/cat-carrier.jpg"
+            "image": "/images/produto-image.png"
         },
         {
             "id": 50,
             "name": "Casa de Madeira para Hamster",
             "price": "R$ 69,90",
-            "image": "/images/hamster-house.jpg"
+            "image": "/images/produto-image.png"
         }
     ]
 }

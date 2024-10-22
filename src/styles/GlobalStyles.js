@@ -19,8 +19,37 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
   }
 
-  .menu-icon {
-    display: none;
+  /* Fixando o Navbar no topo */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
+    padding: 10px;
+  }
+
+  /* Fixando a SearchBar abaixo do Navbar */
+  .search-bar {
+    position: fixed;
+    top: 60px; /* Certifique-se de ajustar conforme a altura do Navbar */
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: white;
+    padding: 10px;
+  }
+
+  /* Fixando as Categories abaixo da SearchBar */
+  .categories {
+    position: fixed;
+    top: 120px; /* Ajuste conforme a altura da SearchBar */
+    left: 0;
+    width: 100%;
+    z-index: 998;
+    background-color: white;
+    padding: 10px;
   }
 
   .product-list {
@@ -28,6 +57,7 @@ const GlobalStyles = createGlobalStyle`
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
     padding: 2rem;
+    margin-top: 200px; /* Adicione esse margin-top para evitar sobreposição com os elementos fixos */
   }
 
   .product-item {

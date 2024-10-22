@@ -1,6 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
+import PetsIcon from "@mui/icons-material/Pets";
+import ToysIcon from "@mui/icons-material/Toys";
+import BedIcon from "@mui/icons-material/Hotel";
+import AccessoryIcon from "@mui/icons-material/Checkroom";
+import HygieneIcon from "@mui/icons-material/CleaningServices";
+import HealthIcon from "@mui/icons-material/LocalHospital";
+
 // Estilos para a seção de categorias
 const CategoriesContainer = styled.section`
   padding: 2rem;
@@ -25,18 +32,18 @@ const CategoriesContainer = styled.section`
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 120px;
+    width: 12vw; /* Tamanho dinâmico baseado na largura da viewport */
   }
 
-  .category-item img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+  .category-item svg {
+    font-size: 8vw; /* Tamanho dinâmico dos ícones baseado na largura da viewport */
+    color: #555;
     margin-bottom: 0.5rem;
+    transition: font-size 0.3s ease;
   }
 
   .category-item p {
-    font-size: 1rem;
+    font-size: 1.5rem; /* Usando rem para ajustar o tamanho do texto */
     color: #555;
   }
 
@@ -46,28 +53,37 @@ const CategoriesContainer = styled.section`
     }
 
     .category-item {
-      width: 80px;
+      width: 15vw; /* Ajuste para telas menores */
     }
 
-    .category-item img {
-      width: 50px;
-      height: 50px;
+    .category-item svg {
+      font-size: 10vw; /* Aumentando o ícone proporcionalmente */
     }
 
     .category-item p {
-      font-size: 0.9rem;
+      font-size: 1.2rem; /* Ajuste do texto */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .category-item svg {
+      font-size: 12vw; /* Ajustando para telas ainda menores */
+    }
+
+    .category-item p {
+      font-size: 1rem;
     }
   }
 `;
 
 const Categories = () => {
   const categories = [
-    { id: 1, name: "Rações", image: "c:\Users\vinic\AppData\Local\Temp\Design-sem-nome-2023-10-20T122210.782.jpg" },
-    { id: 2, name: "Brinquedos", image: "c:/Users/vinic/AppData/Local/Temp/Sem título.jpg" },
-    { id: 3, name: "Camas", image: "c:/Users/vinic/AppData/Local/Temp/Sem título.jpg" },
-    { id: 4, name: "Acessórios", image: "c:/Users/vinic/AppData/Local/Temp/Sem título.jpg" },
-    { id: 5, name: "Higiene", image: "c:/Users/vinic/AppData/Local/Temp/Sem título.jpg" },
-    { id: 6, name: "Saúde", image: "c:\Users\vinic\AppData\Local\Temp\png-transparent-pets-vet-vetenarian-animal-health-pinpoint-businesses-icon-thumbnail.png" },
+    { id: 1, name: "Rações", icon: <PetsIcon /> },
+    { id: 2, name: "Brinquedos", icon: <ToysIcon /> },
+    { id: 3, name: "Camas", icon: <BedIcon /> },
+    { id: 4, name: "Acessórios", icon: <AccessoryIcon /> },
+    { id: 5, name: "Higiene", icon: <HygieneIcon /> },
+    { id: 6, name: "Saúde", icon: <HealthIcon /> },
   ];
 
   return (
@@ -76,7 +92,7 @@ const Categories = () => {
       <div className="categories-list">
         {categories.map((category) => (
           <div key={category.id} className="category-item">
-            <img src={category.image} alt={category.name} />
+            {category.icon}
             <p>{category.name}</p>
           </div>
         ))}
