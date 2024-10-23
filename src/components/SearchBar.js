@@ -1,22 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import styled from "styled-components";
-
-// Estilizando a barra de pesquisa
-const SearchContainer = styled.div`
-  text-align: center;
-  margin: 2rem 0;
-
-  input {
-    padding: 0.7rem;
-    width: 80%;
-    max-width: 600px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-`;
 
 const SearchBar = ({ setFilteredProducts }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -49,14 +32,26 @@ const SearchBar = ({ setFilteredProducts }) => {
   };
 
   return (
-    <SearchContainer>
-      <input
-        type="text"
-        value={searchTerm}
-        onChange={handleSearch}
-        placeholder="Buscar produtos..."
-      />
-    </SearchContainer>
+    <div className="columns is-centered" style={{ margin: "2rem 0" }}>
+      <div className="column is-half">
+        <div className="control is-expanded">
+          <input
+            className="input is-medium"
+            type="text"
+            value={searchTerm}
+            onChange={handleSearch}
+            placeholder="Buscar produtos..."
+            style={{
+              //boxShadow: "0 0.125rem 0.25rem rgba(0, 0, 0, 0.1)", // Sombra convertida para rem
+              color: "#ffffff", // Texto branco
+              fontWeight: "bold", // Negrito no texto
+              padding: "1rem", // Espaçamento interno
+              fontSize: "1.5rem", // Tamanho da fonte em rem (equivalente a 24px)
+            }}
+          />
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import { ThemeProvider } from "styled-components";
 import { theme } from "./styles/theme";
 import GlobalStyles from "./styles/GlobalStyles";
 
+import "bulma/css/bulma.min.css"; // Importando Bulma
+
 // Componentes
 import Navbar from "./components/Navbar";
 import SearchBar from "./components/SearchBar";
-import Footer from "./components/Footer"; // Importar o Footer
+import Footer from "./components/Footer";
 import Categories from "./components/Categories";
 import ProductList from "./components/ProductList";
 
@@ -26,7 +29,7 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         setProducts(data.products);
-        setFilteredProducts(data.products); // Inicialmente, exibir todos os produtos
+        setFilteredProducts(data.products);
       })
       .catch((error) => console.error("Erro ao carregar produtos:", error));
   }, []);
@@ -35,24 +38,37 @@ function App() {
     <ThemeProvider theme={theme}>
       <Router>
         <GlobalStyles />
-        <div className="navbar">
-          <Navbar />
-        </div>
-        <div className="search-bar">
-          <SearchBar setFilteredProducts={setFilteredProducts} />
-        </div>
 
-        <Routes>
-          <Route
-            path="/"
-            element={<Home filteredProducts={filteredProducts} />}
-          />
-          <Route path="/cats" element={<Cats />} />
-          <Route path="/dogs" element={<Dogs />} />
-          <Route path="/brands" element={<Brands />} />
-        </Routes>
+        {/* Container para centralizar o conteúdo */}
+        <div className="container">
+          {/* Navbar com espaçamento inferior */}
+          <div className="navbar mb-5">
+            <Navbar />
+          </div>
 
-        <Footer />
+          {/* Barra de busca com espaçamento inferior */}
+          <div className="search-bar mb-5">
+            <SearchBar setFilteredProducts={setFilteredProducts} />
+          </div>
+
+          {/* Colocar as rotas dentro de um section */}
+          <section className="section">
+            <div className="container">
+              <Routes>
+                <Route
+                  path="/"
+                  element={<Home filteredProducts={filteredProducts} />}
+                />
+                <Route path="/cats" element={<Cats />} />
+                <Route path="/dogs" element={<Dogs />} />
+                <Route path="/brands" element={<Brands />} />
+              </Routes>
+            </div>
+          </section>
+
+          {/* Footer no final */}
+          <Footer />
+        </div>
       </Router>
     </ThemeProvider>
   );

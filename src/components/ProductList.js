@@ -1,134 +1,119 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState, useEffect } from "react";
 import ProductItem from "./ProductItem";
 import usePagination from "../hooks/usePagination";
-
-const Container = styled.div`
-  background-color: ${(props) => props.theme.colors.background};
-  max-width: 1600px; /* Ajuste o max-width para algo menor se necessário */
-  margin: 0 auto; /* Centraliza o container */
-  padding: 2rem 1rem; /* Mantém o espaçamento interno */
-`;
-
-const ProductListWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(200px, 1fr)
-  ); /* Mantém as colunas adaptativas */
-  gap: 20px; /* Espaçamento entre os produtos */
-  justify-items: center; /* Centraliza os itens na grid */
-  padding: 1rem 0;
-`;
-
-const PaginationWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-`;
-
-const PaginationButton = styled.button`
-  background-color: ${(props) => props.theme.colors.primary};
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin: 0 5px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease-in-out;
-
-  &:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-  }
-
-  &:hover:enabled {
-    background-color: ${(props) =>
-      props.theme.colors.accent}; // Verde no hover  }
-`;
-
-const SelectContainer = styled.div`
-  text-align: center;
-  margin: 1rem 0;
-
-  label {
-    font-size: 1.1rem;
-    margin-right: 0.5rem;
-    color: ${(props) => props.theme.colors.text}; /* Texto principal */
-  }
-
-  select {
-    padding: 0.6rem;
-    font-size: 1rem;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-
-    &:hover {
-      border-color: ${(props) =>
-        props.theme.colors.primary}; /* Azul no hover */
-    }
-
-    &:focus {
-      border-color: ${(props) => props.theme.colors.primary};
-      outline: none;
-      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    }
-  }
-`;
+import "bulma/css/bulma.min.css";
 
 const ProductList = ({ products }) => {
   const [productsPerPage, setProductsPerPage] = useState(6); // Padrão: 6 produtos por página
   const { currentItems, currentPage, setCurrentPage, totalPages } =
     usePagination(products, productsPerPage);
 
+  // Sempre que mudar o número de produtos por página, voltar para a primeira página
+  useEffect(() => {
+    setCurrentPage(1); // Reseta para a primeira página
+  }, [productsPerPage, setCurrentPage]);
+
+  // Funções para lidar com o zoom ao passar o mouse na imagem
+  const handleZoom = (e) => {
+    e.target.style.transform = "scale(1)";
+  };
+
+  const handleZoomOut = (e) => {
+    e.target.style.transform = "scale(1.2)";
+  };
+
   return (
-    <Container>
-      <SelectContainer>
-        <label htmlFor="productsPerPage">Produtos por página: </label>
-        <select
-          id="productsPerPage"
-          value={productsPerPage}
-          onChange={(e) => setProductsPerPage(Number(e.target.value))}
+    <section className="container">
+      {/* Ajustar o espaçamento da seleção */}
+      <div className="field is-grouped is-grouped-centered mb-5">
+        <label
+          htmlFor="productsPerPage"
+          className="label has-text-weight-bold is-size-5 has-text-dark mr-2"
         >
-          <option value="4">4</option>
-          <option value="6">6</option>
-          <option value="10">10</option>
-          <option value="12">12</option>
-        </select>
-      </SelectContainer>
+          Produtos por página:
+        </label>
+        <div className="control">
+          <div className="select is-rounded">
+            <select
+              id="productsPerPage"
+              value={productsPerPage}
+              onChange={(e) => setProductsPerPage(Number(e.target.value))}
+            >
+              <option value="4">4</option>
+              <option value="6">6</option>
+              <option value="10">10</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+        </div>
+      </div>
 
-      <ProductListWrapper>
+      {/* Ajuste no grid de produtos */}
+      <section className="columns is-multiline is-variable is-4">
         {currentItems.map((product) => (
-          <ProductItem key={product.id} product={product} />
+          <div key={product.id} className="column is-one-quarter">
+            <div className="card is-hoverable" style={{ marginBottom: "20px" }}>
+              <div className="card-image">
+                <figure className="image is-4by3">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    onMouseEnter={handleZoom} // Adiciona efeito de zoom
+                    onMouseLeave={handleZoomOut} // Remove efeito de zoom
+                    style={{ transition: "transform 0.3s ease" }} // Transição suave
+                  />
+                </figure>
+              </div>
+              <div className="card-content has-text-centered">
+                <p className="title is-5">{product.name}</p>
+                <p className="subtitle is-4 has-text-primary">
+                  R${" "}
+                  <span className="has-text-weight-bold">{product.price}</span>
+                </p>
+                {product.discount && (
+                  <p className="has-text-danger has-text-weight-bold">
+                    {product.discount}% OFF
+                  </p>
+                )}
+                <button className="button is-primary is-fullwidth">
+                  Adicionar ao carrinho
+                </button>
+              </div>
+            </div>
+          </div>
         ))}
-      </ProductListWrapper>
+      </section>
 
-      <PaginationWrapper>
-        <PaginationButton
+      {/* Ajustar espaçamento dos botões de paginação */}
+      <section className="buttons is-centered mt-6">
+        <button
+          className="button is-success is-light"
           onClick={() => setCurrentPage(currentPage - 1)}
           disabled={currentPage === 1}
         >
           Anterior
-        </PaginationButton>
+        </button>
         {Array.from({ length: totalPages }, (_, index) => (
-          <PaginationButton
+          <button
             key={index + 1}
+            className={`button is-success is-light ${
+              currentPage === index + 1 ? "is-active" : ""
+            }`}
             onClick={() => setCurrentPage(index + 1)}
             disabled={currentPage === index + 1}
           >
             {index + 1}
-          </PaginationButton>
+          </button>
         ))}
-        <PaginationButton
+        <button
+          className="button is-success is-light"
           onClick={() => setCurrentPage(currentPage + 1)}
           disabled={currentPage === totalPages}
         >
           Próximo
-        </PaginationButton>
-      </PaginationWrapper>
-    </Container>
+        </button>
+      </section>
+    </section>
   );
 };
 

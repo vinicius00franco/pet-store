@@ -1,124 +1,130 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { FiMenu, FiX } from "react-icons/fi";
-
-// Estilo para a navbar
-const NavbarContainer = styled.nav`
-  background-color: ${(props) => props.theme.colors.primary};
-  color: white;
-
-  padding: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-
-  .menu-icon {
-    display: none;
-    font-size: 1.8rem;
-    color: white;
-    cursor: pointer;
-  }
-
-  ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-  }
-
-  ul li {
-    margin: 0;
-  }
-
-  a {
-    color: white;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-
-    &:hover {
-      color: ${(props) => props.theme.colors.accent}; // Cor verde no hover
-    }
-  }
-
-  ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
-    transition: all 0.3s ease-in-out;
-
-    &:hover {
-      color: #ffcc00;
-      background-color: rgba(255, 255, 255, 0.2);
-      border-radius: 5px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    ul {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background-color: #007bff;
-      transition: transform 0.3s ease-in-out;
-      transform: ${({ open }) =>
-        open ? "translateY(0)" : "translateY(-100%)"};
-    }
-
-    .menu-icon {
-      display: block;
-    }
-
-    ul li {
-      margin: 1.5rem 0;
-    }
-  }
-`;
+import { FiMenu, FiLogIn, FiLogOut, FiUser } from "react-icons/fi";
+import { theme } from "../styles/theme.js"; // Importando o arquivo de cores
+import Icon from "@mui/material/Icon"; // Importando o componente de ícone
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const handleLoginLogout = () => {
+    setIsLoggedIn(!isLoggedIn);
+  };
+
   return (
-    <NavbarContainer open={menuOpen}>
-      <div className="menu-icon" onClick={toggleMenu}>
-        {menuOpen ? <FiX /> : <FiMenu />}
+    <nav
+  className="navbar is-fixed-top"
+  role="navigation"
+  aria-label="main navigation"
+  style={{ backgroundColor: theme.primary }}
+>
+  <div className="container">
+    <div className="navbar-brand">
+      <Link
+        to="/"
+        className="navbar-item"
+        style={{ display: "flex", alignItems: "center" }}
+      >
+        <div style={{ marginRight: "1rem" }}>
+          <Icon
+            style={{
+              fontSize: "calc(2rem + 1vw)", 
+              borderRadius: "50%",
+              border: `2px solid ${theme.secondary}`,
+              padding: "5px",
+              color: theme.secondary,
+            }}
+          >
+            pets
+          </Icon>
+        </div>
+        <div>
+          <h1
+            className="title is-4"
+            style={{
+              color: theme.secondary,
+              fontSize: "calc(1rem + 1vw)",
+              whiteSpace: "nowrap",
+              lineHeight: "1.5",
+            }}
+          >
+            Pet Store
+          </h1>
+        </div>
+      </Link>
+
+      <button
+        className={`navbar-burger burger ${menuOpen ? "is-active" : ""}`}
+        aria-label="menu"
+        aria-expanded="false"
+        onClick={toggleMenu}
+        style={{ color: theme.secondary }}
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <div className={`navbar-menu ${menuOpen ? "is-active" : ""}`}>
+      <div className="navbar-start">
+        <Link
+          to="/"
+          className="navbar-item"
+          onClick={toggleMenu}
+          style={{
+            color: theme.secondary,
+            fontSize: "calc(0.875rem + 0.5vw)",
+          }}
+        >
+          Home
+        </Link>
       </div>
-      <ul>
-        <li>
-          <Link to="/" onClick={toggleMenu}>
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to="/cats" onClick={toggleMenu}>
-            Gatos
-          </Link>
-        </li>
-        <li>
-          <Link to="/dogs" onClick={toggleMenu}>
-            Cachorros
-          </Link>
-        </li>
-        <li>
-          <Link to="/brands" onClick={toggleMenu}>
-            Marcas
-          </Link>
-        </li>
-      </ul>
-    </NavbarContainer>
+
+      <div className="navbar-end">
+        <div className="navbar-item">
+          <div className="buttons">
+            {isLoggedIn ? (
+              <>
+                <Link to="/profile" className="button is-light">
+                  <FiUser className="mr-2" />
+                  Perfil
+                </Link>
+                <button
+                  className="button is-light"
+                  onClick={handleLoginLogout}
+                  style={{
+                    fontSize: "calc(0.875rem + 0.5vw)",
+                  }}
+                >
+                  <FiLogOut className="mr-2" />
+                  Logout
+                </button>
+              </>
+            ) : (
+              <button
+                className="button is-light"
+                onClick={handleLoginLogout}
+                style={{
+                  fontSize: "calc(0.875rem + 0.5vw)",
+                }}
+              >
+                <FiLogIn className="mr-4" />
+                Login
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
   );
 };
 
