@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Rações",
+        "icon": "faPaw"
+    },
+    {
+        "id": 2,
+        "name": "Brinquedos",
+        "icon": "faCar"
+    },
+    {
+        "id": 3,
+        "name": "Camas",
+        "icon": "faBed"
+    },
+    {
+        "id": 4,
+        "name": "Acessórios",
+        "icon": "faTshirt"
+    },
+    {
+        "id": 5,
+        "name": "Higiene",
+        "icon": "faBroom"
+    },
+    {
+        "id": 6,
+        "name": "Saúde",
+        "icon": "faStethoscope"
+    }
+]

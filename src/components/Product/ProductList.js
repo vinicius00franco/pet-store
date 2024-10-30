@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import ProductItem from "./ProductItem";
-import usePagination from "../hooks/usePagination";
-import "bulma/css/bulma.min.css";
+import { ProductItem } from "./ProductItem";
+import { usePagination } from "../../hooks/usePagination";
 
-const ProductList = ({ products }) => {
+import "bulma/css/bulma.min.css";
+import "./ProductList.css";
+
+export const ProductList = ({ products }) => {
   const [productsPerPage, setProductsPerPage] = useState(6); // Padrão: 6 produtos por página
   const { currentItems, currentPage, setCurrentPage, totalPages } =
     usePagination(products, productsPerPage);
@@ -116,5 +118,3 @@ const ProductList = ({ products }) => {
     </section>
   );
 };
-
-export default ProductList;

@@ -1,0 +1,12 @@
+/* src/styles/variables.css */
+
+:root {
+  --color-background: #f4f4f9; /* Um cinza claro moderno */
+  --color-text: #1a1a1a; /* Texto escuro para contraste com o fundo claro */
+  --color-primary: #4a90e2; /* Azul mais suave */
+  --color-secondary: #2563eb; /* Azul escuro com maior saturação */
+  --color-accent: #ff6f61; /* Cor de destaque para elementos específicos */
+  --spacing-medium: 1rem;
+  --spacing-large: 2rem;
+  /* Outras variáveis adicionais conforme necessário */
+}

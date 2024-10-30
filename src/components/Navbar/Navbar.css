@@ -1,0 +1,43 @@
+/* src/components/Navbar/Navbar.css */
+
+.navbar {
+  background-color: var(--color-background);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand .navbar-item .icon {
+  margin-right: 0.75rem;
+}
+
+.title {
+  color: var(--color-secondary);
+  font-size: calc(1rem + 1vw);
+  white-space: nowrap;
+  line-height: 1.5;
+}
+
+.navbar-item {
+  color: var(--color-secondary);
+  font-weight: bold;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-item:hover {
+  color: var(--color-primary);
+  background-color: var(--color-secondary-light);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.button.is-light {
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.button.is-light:hover {
+  background-color: var(--color-primary-dark);
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}

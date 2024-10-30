@@ -1,0 +1,27 @@
+/* src/components/Categories/Categories.css */
+
+.categories-container {
+    padding: var(--spacing-medium);
+    background-color: var(--color-background);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .categories-container .title {
+    opacity: 0.9; /* Ajuste de opacidade para um efeito mais suave */
+    font-weight: bold;
+}
+  
+  .category-item {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .category-item:hover {
+    background-color: var(--color-secondary);
+  }
+  

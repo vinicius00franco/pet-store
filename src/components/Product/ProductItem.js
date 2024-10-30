@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const ProductItem = ({ product }) => {
+export const ProductItem = ({ product }) => {
   const priceRef = useRef(null);
 
   // Efeito de pulsação suave e espaçado no tempo
@@ -85,4 +85,3 @@ const ProductItem = ({ product }) => {
   );
 };
 
-export default ProductItem;
